@@ -7,6 +7,7 @@ using System.Xml; //Needed for XML functionality
 using System.Xml.Serialization; //Needed for XML Functionality
 using System.IO;
 using System.Text;
+using System.Xml.Linq;
 
 public class LanguageOptions : MonoBehaviour {
     public string TitleTag;
@@ -14,16 +15,6 @@ public class LanguageOptions : MonoBehaviour {
 // Use this for initialization
 void Start()
     {
-
-        XmlDocument xmlLangs = new XmlDocument();
-        xmlLangs.LoadXml("http://pmastudio.net/cosmos-learn/cosmos-language.xml");
-
-        XmlNodeList nodeList = xmlLangs.GetElementsByTagName("en-US");
-
-        foreach (XmlNode text in nodeList)
-        {
-            Debug.Log(text);
-        }
 
         try
         {
