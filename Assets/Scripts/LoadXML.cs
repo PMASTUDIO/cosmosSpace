@@ -28,10 +28,14 @@ public class LoadXML : MonoBehaviour {
 
         foreach(var text in texts.Elements())
         {
-            if(text.FirstAttribute.Value == "uranos")
+			if (text.FirstAttribute.Value == gameObject.GetComponent<LanguageOptions>().TitleTag)
             {
-                Debug.Log(text.Value);
-            }
+				gameObject.GetComponent<TextMesh>().richText = true;
+				gameObject.GetComponent<TextMesh>().text = text.Value;
+            } else
+			{
+				Debug.Log("Not find yet!");
+			}
         }
 
     }
